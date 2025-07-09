@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import SkeletonProblem from "@/components/SkeletonProblem/SkeletonProblem";
 import Image from "next/image";
-import style from "@/components/ProblemList/ProblemList.module.css"
 
 
 interface Problem {
