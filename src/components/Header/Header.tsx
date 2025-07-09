@@ -67,7 +67,7 @@ export default function Header({ onFilterChange }: HeaderProps) {
 
   return (
     <>
-      <div className="flex justify-center bg-green-700 w-full text-black">top</div>
+      <div className="flex justify-center bg-green-700 w-full text-white font-bold">RouteAlive: cada <span className="text-emerald-950 mr-1.5 ml-1.5">alerta</span> salva <span className="text-emerald-950 mr-1.5 ml-1.5">vidas</span> </div>
 
       <header className={`flex justify-between items-center px-6 py-3 shadow-sm ${style.header}`}>
         <div className={`flex justify-between w-full items-center ${style.topbar}`}>
