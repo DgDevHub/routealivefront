@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.topbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  order: 1; 
+}
+
+.perfil {
+  order: 2; 
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .topbar {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .menu {
+    order: 1;
+  }
+
+  .perfil {
+    order: 2;
+    margin-bottom: 0;
+  }
+}
