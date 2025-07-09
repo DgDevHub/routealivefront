@@ -9,9 +9,11 @@ Interface web para visualização e cadastro de problemas em rodovias brasileira
 ## 📸 Imagens do Projeto
 
 <div align="center">
-  <img src="IMAGEM_AQUI" width="600px" alt="Tela inicial do RouteAlive" />
+  <img src="/public/images/desktop-route.png" width="600px" alt="Tela desktop" />
   <br />
-  <img src="IMAGEM_AQUI" width="600px" alt="Tela de cadastro de problemas" />
+  <img src="/public/images/mobile-route.png" width="600px" alt="Tela mobile" />
+  <br />
+  <img src="/public/images/search-route.png" width="600px" alt="Tela busca" />
 </div>
 
 ---
