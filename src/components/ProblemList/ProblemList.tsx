@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import SkeletonProblem from "@/components/SkeletonProblem/SkeletonProblem";
 import Image from "next/image";
+import style from "@/components/ProblemList/ProblemList.module.css"
 
 
 interface Problem {
@@ -16,11 +17,11 @@ interface Problem {
 }
 
 const tipoImagemMap: Record<string, string> = {
-  "Buraco": "/img/default.png",
+  "Buraco": "/img/buracos.png",
   "Sinalização quebrada": "/img/sinalizacao.png",
   "Animal": "/img/morto.png",
   "Falta de iluminação": "/img/luz.png",
-  "Outro": "/img/outro.png",
+  "Inundações": "/img/molhado.png",
 };
 
 export default function ProblemsList({
@@ -83,7 +84,7 @@ export default function ProblemsList({
               <SkeletonProblem key={i} />
             ))
           : problems.map((problem) => (
-              <li key={problem.id} className="border p-4 rounded shadow-sm flex gap-4 items-center">
+            <li key={problem.id} className="border-3 p-4 rounded shadow-sm flex gap-4 items-center">
                 <Image
                   src={tipoImagemMap[problem.tipo] || "/img/default.png"} 
                   alt={problem.tipo}
@@ -95,10 +96,11 @@ export default function ProblemsList({
                   <h2 className="font-semibold text-lg text-green-700">
                     {problem.tipo}
                   </h2>
-                  <p className="text-sm text-gray-800">{problem.descricao}</p>
+                  <p className="text-sm text-gray-800 w-[100%]">{problem.descricao}</p>
                   <p className="text-xs text-gray-500 italic">
                     {problem.cidade} — {problem.data}
                   </p>
+                  <span className=" w-[120px]"> { problem.status }</span>
                 </div>
               </li>
             ))}

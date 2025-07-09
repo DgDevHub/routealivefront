@@ -20,7 +20,10 @@
 .perfil {
   order: 2; 
 }
-
+.textmont{
+  font-size: 1rem;
+  font-family: "MontBold";
+}
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
