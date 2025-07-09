@@ -12,7 +12,6 @@ Interface web para visualização e cadastro de problemas em rodovias brasileira
   <img src="/public/images/desktop-route.png" width="600px" alt="Tela desktop" />
   <br />
   <img src="/public/images/mobile-route.png" width="400px" alt="Tela mobile" />
-  <br />
   <img src="/public/images/search-route.png" width="400px" alt="Tela busca" />
 </div>
 
