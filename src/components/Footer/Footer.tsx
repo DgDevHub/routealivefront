@@ -1,3 +1,4 @@
+// components/Footer/Footer.tsx
 import style from "@/components/Footer/Footer.module.css";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
@@ -10,7 +11,9 @@ export default function Footer() {
           <p className="text-sm text-gray-100 font-medium">
             Desenvolvido com 💚 por quem viveu as estradas do Brasil.
           </p>
-          <p className="text-xs text-gray-200 mt-1">© {new Date().getFullYear()} RouteAlive API. Todos os direitos reservados.</p>
+          <p className="text-xs text-gray-200 mt-1">
+            © {new Date().getFullYear()} RouteAlive API. Todos os direitos reservados.
+          </p>
         </div>
 
         <div className="flex gap-5 text-white text-xl">
@@ -23,7 +26,7 @@ export default function Footer() {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/seulinkedin"
+            href="https://www.linkedin.com/in/diegosilvadevfront/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-emerald-950 transition text-3xl"

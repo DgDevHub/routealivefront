@@ -1,18 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header/Header";
-import ProblemsList from "@/components/ProblemList/ProblemList"; // ajuste o path conforme necessário
+import StatusFilter from "@/components/StatusFilter";
+import CitySearch from "@/components/CitySearch";
+import ProblemsList from "@/components/ProblemList/ProblemList";
 import Footer from "@/components/Footer/Footer";
 
-export default function Home() {
-  const [selectedFilter, setSelectedFilter] = useState<string>("");
+export default function HomePage() {
+  const [typeFilter, setTypeFilter] = useState("");
+  const [statusFilter, setStatusFilter] = useState("");
+  const [cityFilter, setCityFilter] = useState("");
+
+  // Limpar cidade quando tipo ou status mudar
+  useEffect(() => {
+    setCityFilter("");
+  }, [typeFilter, statusFilter]);
 
   return (
     <>
-      <Header onFilterChange={(tipo) => setSelectedFilter(tipo)} />
-      <ProblemsList filter={selectedFilter} />
-      <Footer></Footer>
+      <Header onFilterChange={setTypeFilter} />
+      <CitySearch onCityChange={setCityFilter} />
+      <StatusFilter onStatusChange={setStatusFilter} />
+      <ProblemsList filter={typeFilter} status={statusFilter} cidade={cityFilter} />
+      <Footer />
     </>
   );
 }

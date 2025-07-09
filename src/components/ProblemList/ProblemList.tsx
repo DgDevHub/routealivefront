@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import SkeletonProblem from "@/components/SkeletonProblem/SkeletonProblem";
-import Link from "next/link";
+import Image from "next/image";
+
 
 interface Problem {
   id: string;
@@ -14,22 +15,51 @@ interface Problem {
   status: string;
 }
 
-export default function ProblemsList({ filter }: { filter: string }) {
+const tipoImagemMap: Record<string, string> = {
+  "Buraco": "/img/default.png",
+  "Sinalização quebrada": "/img/sinalizacao.png",
+  "Animal": "/img/morto.png",
+  "Falta de iluminação": "/img/luz.png",
+  "Outro": "/img/outro.png",
+};
+
+export default function ProblemsList({
+  filter,
+  status,
+  cidade,
+}: {
+  filter: string;
+  status: string;
+  cidade: string;
+}) {
   const [problems, setProblems] = useState<Problem[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!filter) return;
-
     const fetchProblems = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`https://routealive.onrender.com/problems/filter-type/${filter}`);
+        const baseUrl = "https://routealive.onrender.com/problems";
+        const url = filter
+          ? `${baseUrl}/filter-type/${filter}`
+          : baseUrl;
+
+        const res = await fetch(url);
         if (!res.ok) throw new Error("Erro ao buscar problemas");
 
-        const data = await res.json();
-        console.log("Resposta da API:", data);
-        setProblems(data);
+        const data: Problem[] = await res.json();
+
+        const filtrados = data.filter((problem) => {
+          const matchStatus = status
+            ? problem.status.toLowerCase() === status.toLowerCase()
+            : true;
+          const matchCidade = cidade
+            ? problem.cidade.toLowerCase().includes(cidade.toLowerCase())
+            : true;
+          return matchStatus && matchCidade;
+        });
+
+        setProblems(filtrados);
       } catch (err) {
         console.error("Erro no fetch:", err);
         setProblems([]);
@@ -39,20 +69,37 @@ export default function ProblemsList({ filter }: { filter: string }) {
     };
 
     fetchProblems();
-  }, [filter]);
+  }, [filter, status, cidade]);
 
   return (
     <div className="p-4">
-      {!loading && problems.length === 0 && <p>Nenhum problema encontrado.</p>}
+      {!loading && problems.length === 0 && (
+        <p className="text-center text-gray-600">Nenhum problema encontrado.</p>
+      )}
 
       <ul className="space-y-4">
         {loading
-          ? Array.from({ length: 5 }).map((_, i) => <SkeletonProblem key={i} />)
+          ? Array.from({ length: 5 }).map((_, i) => (
+              <SkeletonProblem key={i} />
+            ))
           : problems.map((problem) => (
-              <li key={problem.id} className="border p-4 rounded shadow-sm">
-                <h2 className="font-semibold text-lg">{problem.tipo}</h2>
-                <p className="text-sm text-gray-700">{problem.descricao}</p>
-                <span className="text-xs text-gray-500">{problem.status}</span>
+              <li key={problem.id} className="border p-4 rounded shadow-sm flex gap-4 items-center">
+                <Image
+                  src={tipoImagemMap[problem.tipo] || "/img/default.png"} 
+                  alt={problem.tipo}
+                  width={60}
+                  height={60}
+                  className="rounded"
+                />
+                <div className="flex flex-col">
+                  <h2 className="font-semibold text-lg text-green-700">
+                    {problem.tipo}
+                  </h2>
+                  <p className="text-sm text-gray-800">{problem.descricao}</p>
+                  <p className="text-xs text-gray-500 italic">
+                    {problem.cidade} — {problem.data}
+                  </p>
+                </div>
               </li>
             ))}
       </ul>

@@ -46,7 +46,7 @@ export default function Header({ onFilterChange }: HeaderProps) {
 
     const fetchTipos = async () => {
       try {
-        const res = await fetch("http://localhost:3001/api/tipos");
+        const res = await fetch("https://routealive.onrender.com/api/tipos");
         const data: string[] = await res.json();
 
         const tiposUnicos = Array.from(new Set(data));
