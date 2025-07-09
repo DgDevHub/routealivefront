@@ -27,7 +27,7 @@ export default function StatusFilter({ onStatusChange }: StatusFilterProps) {
         <button
           key={s.value}
           onClick={() => handleClick(s.value)}
-          className={`px-4 py-2 rounded-full text-white text-sm font-medium transition ${
+          className={`px-4 py-2 rounded-full text-white text-sm font-medium transform transition duration-200 hover:scale-105 hover:shadow-md ${
             selectedStatus === s.value ? s.color : "bg-green-700 text-gray-700"
           }`}
         >

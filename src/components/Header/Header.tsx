@@ -101,11 +101,11 @@ export default function Header({ onFilterChange }: HeaderProps) {
             ))}
 
             <li
-              className="flex flex-col items-center text-xs text-gray-700 hover:text-green-700 cursor-pointer relative"
+              className="flex flex-col items-center text-[12px] text-gray-700 hover:text-green-700 cursor-pointer relative"
               onClick={() => setDropdownOpen((prev) => !prev)}
             >
               <Image src="/images/ver.png" alt="Ver mais" width={28} height={28} />
-              <span>Ver mais</span>
+              <span>Mais</span>
 
               {dropdownOpen && tiposExtras.length > 0 && (
                 <ul className="absolute top-14 bg-green-700 shadow-md rounded-md p-2 z-10 w-auto">

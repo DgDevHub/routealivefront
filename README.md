@@ -1,37 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 RouteAlive Front-End
 
-## Getting Started
+Interface web para visualização e cadastro de problemas em rodovias brasileiras. Este projeto consome a [RouteAlive API](https://github.com/DgDevHub/RouteAlive) e permite que usuários registrem situações de risco em estradas como falta de sinalização, iluminação precária ou animais mortos na pista.
 
-First, run the development server:
+> 💡 Desenvolvido como parte de um projeto completo full-stack com foco em usabilidade, performance e boas práticas modernas de front-end.
+
+---
+
+## 📸 Imagens do Projeto
+
+<div align="center">
+  <img src="IMAGEM_AQUI" width="600px" alt="Tela inicial do RouteAlive" />
+  <br />
+  <img src="IMAGEM_AQUI" width="600px" alt="Tela de cadastro de problemas" />
+</div>
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+| Tecnologia       | Versão          | Descrição |
+|------------------|-----------------|-----------|
+| [Next.js](https://nextjs.org/) | 15.3.4 | Framework React com SSR e SSG |
+| [React](https://reactjs.org/) | 19.0.0 | Biblioteca JavaScript para interfaces |
+| [Tailwind CSS](https://tailwindcss.com/) | 4 | Framework de utilitários CSS |
+| [CSS Modules](https://github.com/css-modules/css-modules) | — | Estilização local e modularizada |
+| [ES6+](https://262.ecma-international.org/6.0/) | — | JavaScript moderno |
+| [Vercel](https://vercel.com/) | — | Hospedagem da aplicação |
+
+---
+
+## 📚 O que foi aprendido
+
+- Estruturação de componentes reutilizáveis com **Next.js**;
+- Consumo de **APIs REST** utilizando `fetch` e `useEffect`;
+- Uso avançado do **Tailwind CSS**, incluindo skeleton loading e responsividade;
+- Refatoração da API para melhor integração e manutenibilidade;
+- Otimização da lógica de estados e renderização condicional para uma melhor experiência do usuário.
+
+---
+
+## 🛠️ Como executar o projeto
+
+1. **Clone o repositório:**
+
+```bash
+git clone https://github.com/DgDevHub/routealivefront.git
+cd routealivefront
+```
+
+2. **Instale as dependências:**
+
+```bash
+npm install
+
+
+```
+
+3. **Execute o projeto em ambiente de desenvolvimento:**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O projeto estará disponível em: [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔗 Recursos Úteis
 
-## Learn More
+- 🔌 **API utilizada:** [RouteAlive API - GitHub](https://github.com/DgDevHub/RouteAlive)
+- 🌍 **Site publicado:** [https://routealivefront.vercel.app](https://routealivefront.vercel.app)
+- 💼 **Apresentação no LinkedIn:** [Ver publicação](LINK_DO_LINKEDIN_AQUI)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🏷️ Tópicos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `front-end`
+- `nextjs`
+- `vercel`
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🙋🏾‍♂️ Sobre
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# routealivefront
+O projeto RouteAlive surgiu após uma viagem entre o Sudeste e o Nordeste do Brasil. A experiência pessoal do desenvolvedor ao testemunhar diversos problemas em rodovias inspirou a criação de uma solução digital para alertar motoristas e autoridades sobre situações de risco.
+
+> "O front-end foi desenvolvido com foco em leveza, clareza e acessibilidade, refletindo a importância e seriedade do tema tratado."
