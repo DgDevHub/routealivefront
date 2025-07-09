@@ -108,7 +108,7 @@ export default function Header({ onFilterChange }: HeaderProps) {
               <span>Mais</span>
 
               {dropdownOpen && tiposExtras.length > 0 && (
-                <ul className="absolute top-14 bg-green-700 shadow-md rounded-md p-2 z-10 w-auto">
+                <ul className="absolute -right-4 top-14 bg-green-700 shadow-md rounded-md p-2 z-10 w-auto">
                   {tiposExtras.map((tipo, idx) => (
                     <li
                       key={idx}
