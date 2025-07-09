@@ -71,7 +71,7 @@ O projeto estará disponível em: [http://localhost:3000](http://localhost:3000)
 
 - 🔌 **API utilizada:** [RouteAlive API - GitHub](https://github.com/DgDevHub/RouteAlive)
 - 🌍 **Site publicado:** [https://routealivefront.vercel.app](https://routealivefront.vercel.app)
-- 💼 **Apresentação no LinkedIn:** [Ver publicação](LINK_DO_LINKEDIN_AQUI)
+- 💼 **Apresentação no LinkedIn:** [Ver publicação](https://www.linkedin.com/feed/update/urn:li:ugcPost:7348648904592142336/)
 
 ---
 
